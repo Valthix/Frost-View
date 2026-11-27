@@ -36,7 +36,7 @@ Android development requires Android Studio and the Android SDK.
 iOS development requires macOS and Xcode.
 
 ```bash
-env NUVIO_IOS_DISTRIBUTION=full xcodebuild \\
+env NUVIO_IOS_DISTRIBUTION=full xcodebuild \
   -project iosApp/iosApp.xcodeproj \\
   -scheme iosApp \\
   -configuration Debug \\
