@@ -51,6 +51,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Frost View</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Frost View connects to media servers on your local network.</string>
 	<key>NSAppTransportSecurity</key>
