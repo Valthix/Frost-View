@@ -3,4 +3,4 @@
 TEAM_ID=
 
 PRODUCT_NAME=Frost View
-PRODUCT_BUNDLE_IDENTIFIER=com.nuvio.app.Nuvio$(TEAM_ID)
+PRODUCT_BUNDLE_IDENTIFIER=com.valthix.frostview
