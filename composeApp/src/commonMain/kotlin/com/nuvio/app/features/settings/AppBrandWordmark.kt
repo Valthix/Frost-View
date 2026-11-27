@@ -1,6 +1,5 @@
 package com.nuvio.app.features.settings
 
-import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -11,6 +10,8 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.FontWeight
 import com.nuvio.app.core.ui.appTheme
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +23,7 @@ import org.jetbrains.compose.resources.ResourceEnvironment
 import org.jetbrains.compose.resources.decodeToImageBitmap
 import org.jetbrains.compose.resources.getDrawableResourceBytes
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.rememberResourceEnvironment
 
 @Composable
@@ -30,22 +32,12 @@ internal fun AppBrandWordmark(
     contentDescription: String? = null,
     icon: AppIconOption? = null,
 ) {
-    val resource = rememberAppBrandWordmarkResource(icon)
-    val environment = rememberResourceEnvironment()
-    val bitmap by produceState(AppBrandWordmarkCache[resource], resource, environment) {
-        if (value == null) value = AppBrandWordmarkCache.load(resource, environment)
-    }
-    val loaded = bitmap
-    val painter = if (loaded != null) {
-        remember(loaded) { BitmapPainter(loaded) }
-    } else {
-        painterResource(resource)
-    }
-    Image(
-        painter = painter,
-        contentDescription = contentDescription,
+    Text(
+        text = stringResource(Res.string.app_brand_name),
         modifier = modifier,
-        contentScale = ContentScale.Fit,
+        style = MaterialTheme.typography.headlineSmall,
+        color = MaterialTheme.colorScheme.onSurface,
+        fontWeight = FontWeight.Bold,
     )
 }
 
