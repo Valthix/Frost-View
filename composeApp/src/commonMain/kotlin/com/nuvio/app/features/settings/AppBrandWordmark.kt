@@ -12,7 +12,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import com.nuvio.app.core.ui.appTheme
+import nuvio.composeapp.generated.resources.Res
+import nuvio.composeapp.generated.resources.app_brand_name
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,7 +38,9 @@ internal fun AppBrandWordmark(
 ) {
     Text(
         text = stringResource(Res.string.app_brand_name),
-        modifier = modifier,
+        modifier = modifier.semantics {
+            if (contentDescription != null) this.contentDescription = contentDescription
+        },
         style = MaterialTheme.typography.headlineSmall,
         color = MaterialTheme.colorScheme.onSurface,
         fontWeight = FontWeight.Bold,
