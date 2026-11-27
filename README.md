@@ -1,29 +1,26 @@
 <div align="center">
 
-  <img src="https://nuvio.tv/assets/nuvio-app-logo-wordmark.webp" alt="Nuvio" width="320" />
+  <h1>Frost View</h1>
 
   <p>
-    A free, open-source media app for your phone, your desktop, and the TV you already own.
+    A community-maintained fork of Nuvio Mobile, rebranded as Frost View.
     <br />
-    Bring your own sources. Nuvio turns them into a library with artwork, ratings, subtitles, and your place saved on every screen.
+    Keeps the original app experience, dark interface, playback features, and integrations while building independently under the Frost View name.
   </p>
 
-  [Website](https://nuvio.tv) · [GitHub releases](https://github.com/NuvioMedia/NuvioMobile/releases/latest) · [Support Nuvio](https://nuvio.tv/support)
+  <p><strong>Based on <a href="https://github.com/NuvioMedia/NuvioMobile">Nuvio Mobile</a> · Licensed under GPL-3.0</strong></p>
 
 </div>
 
-## Get Nuvio Mobile
+## Get Frost View
 
-- [Android on Google Play](https://play.google.com/store/apps/details?id=com.nuvio.app)
-- [Android APK](https://github.com/NuvioMedia/NuvioMobile/releases/latest)
-- iOS via AltStore or SideStore: add [this source URL](https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/store.json) in the app's Sources section, then install Nuvio.
-- iOS beta builds: add [the beta source URL](https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/store-beta.json) instead to get pre-releases as well.
+Release and installation links will be published from this repository as Frost View builds become available.
 
 ## Build from source
 
 ```bash
-git clone https://github.com/NuvioMedia/NuvioMobile.git
-cd NuvioMobile
+git clone https://github.com/Valthix/Frost-View.git
+cd Frost-View
 ```
 
 ### Android
@@ -39,17 +36,21 @@ Android development requires Android Studio and the Android SDK.
 iOS development requires macOS and Xcode.
 
 ```bash
-env NUVIO_IOS_DISTRIBUTION=full xcodebuild \
-  -project iosApp/iosApp.xcodeproj \
-  -scheme iosApp \
-  -configuration Debug \
-  -sdk iphonesimulator \
-  -derivedDataPath build/ios-derived-full-simulator \
-  CODE_SIGNING_ALLOWED=NO \
+env NUVIO_IOS_DISTRIBUTION=full xcodebuild \\
+  -project iosApp/iosApp.xcodeproj \\
+  -scheme iosApp \\
+  -configuration Debug \\
+  -sdk iphonesimulator \\
+  -derivedDataPath build/ios-derived-full-simulator \\
+  CODE_SIGNING_ALLOWED=NO \\
   build
 ```
 
 The shared app is built with Kotlin Multiplatform and Compose Multiplatform.
+
+## Upstream and compatibility
+
+Frost View retains upstream Nuvio identifiers where required for package compatibility, authentication callbacks, existing integrations, and data continuity. Those identifiers are intentionally not renamed as part of the visual rebrand.
 
 ## License
 
